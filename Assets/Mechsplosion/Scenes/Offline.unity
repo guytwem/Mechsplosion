@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 1400527322}
   - component: {fileID: 1400527324}
   - component: {fileID: 1400527323}
+  - component: {fileID: 1400527325}
   m_Layer: 0
   m_Name: Network Manager
   m_TagString: Untagged
@@ -196,18 +197,38 @@ MonoBehaviour:
   serverTickRate: 30
   serverBatching: 0
   serverBatchInterval: 0
-  offlineScene: 
-  onlineScene: 
+  offlineScene: Assets/Mechsplosion/Scenes/Offline.unity
+  onlineScene: Assets/Mechsplosion/Scenes/Online.unity
   transport: {fileID: 1400527323}
   networkAddress: localhost
   maxConnections: 100
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 0}
+  playerPrefab: {fileID: 347268472197654621, guid: 88e4e6a2c267b1a4a8ce2c0014d8f995, type: 3}
   autoCreatePlayer: 1
-  playerSpawnMethod: 0
+  playerSpawnMethod: 1
   spawnPrefabs: []
+  discovery: {fileID: 1400527325}
+--- !u!114 &1400527325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400527321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3291a6853f5bd04282a67bd0a7a926f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secretHandshake: -6113576553783151328
+  serverBroadcastListenPort: 47777
+  ActiveDiscoveryInterval: 3
+  transport: {fileID: 0}
+  onServerFound:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1566906521
 GameObject:
   m_ObjectHideFlags: 0
