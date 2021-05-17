@@ -60,7 +60,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnDuration: 2
-  projectile: {fileID: 0}
+  projectile: {fileID: 6349928060352435856, guid: bc586fdea9898d344b136a5988f0d3fb, type: 3}
+  projectileOffset: {x: 0, y: 1, z: 2}
+  projectileForce: 10
 --- !u!1 &3295838712972654165
 GameObject:
   m_ObjectHideFlags: 0
