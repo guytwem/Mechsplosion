@@ -820,3 +820,69 @@ Received Import Request.
 Start importing Assets/Mechsplosion/Scripts/Networking/MechsplosionPlayerNet.cs using Guid(65cc5c147dff2264ca8e7a052bb167a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '246f489dbbd73b34fdc6b518453e94aa') in 0.016189 seconds
   Import took 0.021544 seconds .
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006904 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.41 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.177 seconds
+Platform modules already initialized, skipping
+Shader 'TextMeshPro/Distance Field SSD': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'TextMeshPro/Distance Field': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Refreshing native plugins compatible for Editor in 0.38 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1830 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 86.1 MB.
+System memory in use after: 85.6 MB.
+
+Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 2313.
+Total: 4.008600 ms (FindLiveObjects: 0.590300 ms CreateObjectMapping: 0.128100 ms MarkObjects: 2.842300 ms  DeleteObjects: 0.443200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 170.970867 seconds.
+  path: Assets/Mechsplosion/Scripts/Networking/MechsplosionPlayerNet.cs
+  artifactKey: Guid(65cc5c147dff2264ca8e7a052bb167a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mechsplosion/Scripts/Networking/MechsplosionPlayerNet.cs using Guid(65cc5c147dff2264ca8e7a052bb167a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4ea694e1c2fbcd2fbe289ae1b593e29') in 0.010862 seconds
+  Import took 0.016091 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.037569 seconds.
+  path: Assets/Mechsplosion/Scripts/Networking/MechsplosionPlayerNet.cs
+  artifactKey: Guid(65cc5c147dff2264ca8e7a052bb167a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mechsplosion/Scripts/Networking/MechsplosionPlayerNet.cs using Guid(65cc5c147dff2264ca8e7a052bb167a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4ea694e1c2fbcd2fbe289ae1b593e29') in 0.004120 seconds
+  Import took 0.007869 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.436201 seconds.
+  path: Assets/Mechsplosion/Scripts/Networking/MechsplosionNetworkManager.cs
+  artifactKey: Guid(8f2f722ca4a9ada4ab0eadd5c5013e3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mechsplosion/Scripts/Networking/MechsplosionNetworkManager.cs using Guid(8f2f722ca4a9ada4ab0eadd5c5013e3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44c53e0747fe1f98ee5daf1985eef7f7') in 0.006703 seconds
+  Import took 0.012797 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.261732 seconds.
+  path: Assets/Mechsplosion/Scripts/Networking/MechsplosionNetworkDiscovery.cs
+  artifactKey: Guid(a3291a6853f5bd04282a67bd0a7a926f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mechsplosion/Scripts/Networking/MechsplosionNetworkDiscovery.cs using Guid(a3291a6853f5bd04282a67bd0a7a926f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb925f2957a877a430ff423bd2925219') in 0.015819 seconds
+  Import took 0.022430 seconds .
+
