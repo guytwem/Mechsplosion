@@ -36,20 +36,11 @@ public class LevelController : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit[] hits = Physics.RaycastAll(ray);
-        string hitNames = "";
         foreach(RaycastHit hit in hits)
         {
-            hitNames += hit.transform.gameObject.name + ", ";
+            if (hit.collider.CompareTag("Interactable"))
+                return hit;
         }
-        Debug.Log(hitNames);
-        if(hits.Length > 0)
-        {
-            Debug.Log(hits[hits.Length - 1].transform.gameObject.name);
-            return hits[hits.Length - 1];
-        }
-        else
-        {
-            return default;
-        }
+        return hits.Length > 0 ? hits[0] : default;
     }
 }
