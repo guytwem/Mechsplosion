@@ -19,7 +19,7 @@ public class DefuserController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-            Jump();
+            Punch();
     }
 
     private void FixedUpdate()
@@ -27,7 +27,7 @@ public class DefuserController : MonoBehaviour
         defuserRigidbody.MovePosition(defuserRigidbody.position + new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * moveSpeed * Time.deltaTime);
     }
 
-    private void Jump()
+    private void Punch()
     {
         defuserRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
