@@ -1,76 +1,76 @@
 Using pre-set license
 Built from '2020.2/release' branch; Version is '2020.2.2f1 (068178b99f32) revision 426360'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Enterprise; OS build 18363.1440; Version 1909; 64bit' Language: 'en' Physical Memory: 16304 MB
+OS: 'Windows 10 Enterprise; OS build 18363.1556; Version 1909; 64bit' Language: 'en' Physical Memory: 32601 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Unity.exe
+C:\Program Files\Unity\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/guy.twemlow/Documents/GitHub/MechSplosion/Mechsplosion
+C:/Users/guy.twemlow/Documents/GitHub/Mechsplosion
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51968
-Successfully changed project path to: C:/Users/guy.twemlow/Documents/GitHub/MechSplosion/Mechsplosion
-C:/Users/guy.twemlow/Documents/GitHub/MechSplosion/Mechsplosion
+62149
+Successfully changed project path to: C:/Users/guy.twemlow/Documents/GitHub/Mechsplosion
+C:/Users/guy.twemlow/Documents/GitHub/Mechsplosion
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 28.88 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 24.53 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.2f1 (068178b99f32)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/guy.twemlow/Documents/GitHub/MechSplosion/Mechsplosion/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/guy.twemlow/Documents/GitHub/Mechsplosion/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA Quadro K2200  (ID=0x13ba)
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1f08)
     Vendor:   
-    VRAM:     4035 MB
-    Driver:   10.18.13.5362
+    VRAM:     5980 MB
+    Driver:   27.21.14.6192
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56144
+Mono path[0] = 'C:/Program Files/Unity/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56704
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001819 seconds.
+Register platform support module: C:/Program Files/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001012 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 26.32 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 23.35 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.866 seconds
+- Completed reload, in  0.740 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003596 seconds.
+Registered in 0.002552 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
-Find all reader and writers took 139 milliseconds
+Find all reader and writers took 69 milliseconds
 Script Module: UnityEngine.UI.dll
-Weave behaviours and messages took134 milliseconds
-Find all reader and writers took 115 milliseconds
+Weave behaviours and messages took55 milliseconds
+Find all reader and writers took 54 milliseconds
 Script Module: UnityEngine.TestRunner.dll
-Weave behaviours and messages took48 milliseconds
-Find all reader and writers took 109 milliseconds
+Weave behaviours and messages took18 milliseconds
+Find all reader and writers took 46 milliseconds
 Script Module: SimpleWebTransport.dll
-Weave behaviours and messages took19 milliseconds
-Find all reader and writers took 112 milliseconds
+Weave behaviours and messages took4 milliseconds
+Find all reader and writers took 51 milliseconds
 Script Module: Unity.Timeline.dll
-Weave behaviours and messages took78 milliseconds
-Find all reader and writers took 115 milliseconds
+Weave behaviours and messages took25 milliseconds
+Find all reader and writers took 52 milliseconds
 Script Module: Mirror.Examples.dll
 [Projectile] NetworkBehaviourProcessor
 [Tank] NetworkBehaviourProcessor
@@ -96,9 +96,9 @@ Script Module: Mirror.Examples.dll
 [PlayerController] NetworkBehaviourProcessor
 [RandomColor] NetworkBehaviourProcessor
 [ShootingTankBehaviour] NetworkBehaviourProcessor
-Weave behaviours and messages took35 milliseconds
-  ProcessSitesModule Mirror.Examples.dll elapsed time:00:00:00.0093800
-Find all reader and writers took 110 milliseconds
+Weave behaviours and messages took17 milliseconds
+  ProcessSitesModule Mirror.Examples.dll elapsed time:00:00:00.0069818
+Find all reader and writers took 49 milliseconds
 Script Module: Mirror.Components.dll
 [NetworkAnimator] NetworkBehaviourProcessor
 [NetworkRoomPlayer] NetworkBehaviourProcessor
@@ -130,50 +130,50 @@ Script Module: Mirror.Components.dll
 [NetworkTransformBase] NetworkBehaviourProcessor
 [NetworkTransformBase] NetworkBehaviourProcessor
 [NetworkTransformChild] NetworkBehaviourProcessor
-Weave behaviours and messages took36 milliseconds
-  ProcessSitesModule Mirror.Components.dll elapsed time:00:00:00
-Find all reader and writers took 107 milliseconds
+Weave behaviours and messages took20 milliseconds
+  ProcessSitesModule Mirror.Components.dll elapsed time:00:00:00.0010233
+Find all reader and writers took 51 milliseconds
 Script Module: Mirror.Tests.Common.dll
-Weave behaviours and messages took3 milliseconds
-Find all reader and writers took 137 milliseconds
+Weave behaviours and messages took1 milliseconds
+Find all reader and writers took 64 milliseconds
 Script Module: Unity.TextMeshPro.dll
-Weave behaviours and messages took162 milliseconds
-Find all reader and writers took 107 milliseconds
+Weave behaviours and messages took59 milliseconds
+Find all reader and writers took 44 milliseconds
 Script Module: Mirror.Tests.Runtime.dll
-Weave behaviours and messages took10 milliseconds
-Find all reader and writers took 112 milliseconds
+Weave behaviours and messages took4 milliseconds
+Find all reader and writers took 47 milliseconds
 Script Module: Telepathy.dll
-Weave behaviours and messages took8 milliseconds
-Find all reader and writers took 110 milliseconds
+Weave behaviours and messages took3 milliseconds
+Find all reader and writers took 48 milliseconds
 Script Module: Mirror.Authenticators.dll
 Weave behaviours and messages took3 milliseconds
   ProcessSitesModule Mirror.Authenticators.dll elapsed time:00:00:00
-Find all reader and writers took 107 milliseconds
+Find all reader and writers took 49 milliseconds
 Script Module: kcp2k.dll
-Weave behaviours and messages took10 milliseconds
-Find all reader and writers took 110 milliseconds
+Weave behaviours and messages took3 milliseconds
+Find all reader and writers took 50 milliseconds
 Script Module: Mirror.Examples.Cloud.GUI.dll
-Weave behaviours and messages took7 milliseconds
-Find all reader and writers took 118 milliseconds
+Weave behaviours and messages took2 milliseconds
+Find all reader and writers took 51 milliseconds
 Script Module: Mirror.Cloud.dll
-Weave behaviours and messages took6 milliseconds
-Find all reader and writers took 116 milliseconds
+Weave behaviours and messages took2 milliseconds
+Find all reader and writers took 52 milliseconds
 Script Module: Mirror.Examples.Cloud.Pong.dll
 [Ball] NetworkBehaviourProcessor
 [BallManager] NetworkBehaviourProcessor
 [Player] NetworkBehaviourProcessor
-Weave behaviours and messages took3 milliseconds
+Weave behaviours and messages took1 milliseconds
   ProcessSitesModule Mirror.Examples.Cloud.Pong.dll elapsed time:00:00:00
-Find all reader and writers took 112 milliseconds
+Find all reader and writers took 46 milliseconds
 Script Module: Mirror.Tests.Performance.Runtime.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 158 milliseconds
+Find all reader and writers took 68 milliseconds
 Script Module: UnityEditor.TestRunner.dll
-Weave behaviours and messages took75 milliseconds
-Find all reader and writers took 152 milliseconds
+Weave behaviours and messages took30 milliseconds
+Find all reader and writers took 70 milliseconds
 Script Module: UnityEditor.UI.dll
-Weave behaviours and messages took20 milliseconds
-Find all reader and writers took 153 milliseconds
+Weave behaviours and messages took9 milliseconds
+Find all reader and writers took 66 milliseconds
 Script Module: Mirror.Tests.dll
 [EmptyBehaviour] NetworkBehaviourProcessor
 [SyncVarGameObjectEqualExposedBehaviour] NetworkBehaviourProcessor
@@ -272,44 +272,28 @@ Script Module: Mirror.Tests.dll
 [VirtualTargetRpc] NetworkBehaviourProcessor
 [VirtualOverrideTargetRpcWithBase] NetworkBehaviourProcessor
 [TargetRpcBehaviour] NetworkBehaviourProcessor
-Weave behaviours and messages took183 milliseconds
-  ProcessSitesModule Mirror.Tests.dll elapsed time:00:00:00.0105814
-Find all reader and writers took 122 milliseconds
+Weave behaviours and messages took78 milliseconds
+  ProcessSitesModule Mirror.Tests.dll elapsed time:00:00:00.0029917
+Find all reader and writers took 47 milliseconds
 Script Module: WeaverTestExtraAssembly.dll
-Weave behaviours and messages took2 milliseconds
+Weave behaviours and messages took1 milliseconds
   ProcessSitesModule WeaverTestExtraAssembly.dll elapsed time:00:00:00
-Find all reader and writers took 130 milliseconds
+Find all reader and writers took 54 milliseconds
 Script Module: Mirror.CompilerSymbols.dll
 Weave behaviours and messages took0 milliseconds
-[ScriptCompilation] NOT recompiling all scripts because this is an import worker process. Reason to compile was: Define symbols changed
 Mono: successfully reloaded assembly
-- Completed reload, in  8.621 seconds
+- Completed reload, in  4.109 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.40 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1474 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 67.4 MB.
-System memory in use after: 67.5 MB.
+System memory in use before: 67.7 MB.
+System memory in use after: 67.8 MB.
 
-Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1907.
-Total: 2.985600 ms (FindLiveObjects: 0.151800 ms CreateObjectMapping: 0.052400 ms MarkObjects: 2.644300 ms  DeleteObjects: 0.135800 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Mirror
-  artifactKey: Guid(5cf8eb36be0834b3da408c694a41cb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Mirror using Guid(5cf8eb36be0834b3da408c694a41cb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca1d9d150ce83366baf51e0153e6d38a') in 0.009014 seconds
-  Import took 0.011398 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000205 seconds.
-  path: Assets/Scenes/InGameScene.unity
-  artifactKey: Guid(d16cd20509e57ec4889bab92d923e090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/InGameScene.unity using Guid(d16cd20509e57ec4889bab92d923e090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e9a9ba061bafa24d994d6f650aaceca') in 0.017531 seconds
-  Import took 0.019745 seconds .
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 1910.
+Total: 2.374500 ms (FindLiveObjects: 0.159900 ms CreateObjectMapping: 0.060300 ms MarkObjects: 2.090400 ms  DeleteObjects: 0.062400 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
