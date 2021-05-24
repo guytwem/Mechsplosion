@@ -28,8 +28,9 @@ namespace Mechsplosion.Networking
         /// </summary>
         public override void OnStartHost()
         {
+            base.OnStartHost();
             IsHost = true;
-            discovery.AdvertiseServer();
+            //discovery.AdvertiseServer();
         }
 
         /// <summary>

@@ -9,6 +9,7 @@ public class DefuserController : MonoBehaviour
     [SerializeField]
     private float jumpForce = 10.0f;
     private Rigidbody defuserRigidbody;
+    private Vector3 direction;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +25,15 @@ public class DefuserController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        defuserRigidbody.MovePosition(defuserRigidbody.position + new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * moveSpeed * Time.deltaTime);
+        direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        direction = Vector3.ClampMagnitude(direction, 1.0f);
+        defuserRigidbody.MovePosition(defuserRigidbody.position + direction * moveSpeed * Time.deltaTime);
+        if(direction.magnitude > 0.1f)
+            defuserRigidbody.MoveRotation(Quaternion.LookRotation(direction, Vector3.up));
     }
 
     private void Punch()
     {
-        defuserRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        defuserRigidbody.AddForce(direction * jumpForce, ForceMode.Impulse);
     }
 }

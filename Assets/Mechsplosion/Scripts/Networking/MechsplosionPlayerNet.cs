@@ -6,6 +6,7 @@ using Mirror;
 using System.Collections;
 
 using Mechsplosion.UI;
+using Mirror.Experimental;
 
 namespace Mechsplosion.Networking
 {
@@ -15,6 +16,12 @@ namespace Mechsplosion.Networking
         public byte playerId;
         [SyncVar]
         public string username = "";
+
+        [SyncVar]
+        public bool isMech = false;
+
+        [SerializeField]
+        private GameObject defuserPrefab;
 
         private Lobby lobby;
         private bool hasJoinedLobby = false;
@@ -100,14 +107,22 @@ namespace Mechsplosion.Networking
 
         public override void OnStartClient()
         {
+            // Load the scene with the lobby
+            if (isMech)
+            {
+                gameObject.AddComponent(typeof(LevelController));
+            }
+            else
+            {
+                /*GameObject defuser = */Instantiate(defuserPrefab, transform);
+            }
             MechsplosionNetworkManager.Instance.AddPlayer(this);
         }
 
         // Runs only when the object is connected is the local player
         public override void OnStartLocalPlayer()
         {
-            // Load the scene with the lobby
-            SceneManager.LoadSceneAsync("InGameMenus", LoadSceneMode.Additive);
+            //SceneManager.LoadSceneAsync("InGameMenus", LoadSceneMode.Additive);
         }
 
         // Runs when the client is disconnected from the server
