@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cdc093b8350824e8ee12d9b2f18af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnDuration: 2
+  turnDuration: 1
   projectile: {fileID: 6349928060352435856, guid: bc586fdea9898d344b136a5988f0d3fb, type: 3}
   projectileOffset: {x: 0, y: 1, z: 2}
   projectileForce: 10
