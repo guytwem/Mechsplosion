@@ -9,13 +9,14 @@ using Mirror;
 
 using TMPro;
 
-namespace Mechsplosion.UI
+namespace Battlecars.UI
 {
     public class ConnectionMenu : MonoBehaviour
     {
-        [SerializeField] private Button hostButton;
-        [SerializeField] private Button connectButton;
-        [SerializeField] private TextMeshProUGUI ipText;
+        [SerializeField] private TMP_InputField hostNameText;
+        [SerializeField] private TMP_InputField gameNameText;
+        [SerializeField] private TMP_InputField playerNameText;
+        [SerializeField] private Button hostStartGame;
 
         [SerializeField] private DiscoveredGame gameTemplate;
         [SerializeField] private Transform foundGamesHolder;
@@ -27,18 +28,29 @@ namespace Mechsplosion.UI
         // Start is called before the first frame update
         void Start()
         {
-            hostButton.onClick.AddListener(() => networkManager.StartHost());
-            connectButton.onClick.AddListener(OnClickConnect);
+            hostNameText.onSubmit.AddListener(_value =>
+            {
+                networkManager.PlayerName = _value;
+                gameNameText.interactable = true;
+                gameNameText.Select();
+            });
+
+            playerNameText.onEndEdit.AddListener(_value => networkManager.PlayerName = _value);
+
+            hostStartGame.onClick.AddListener(() =>
+            {
+                if (!string.IsNullOrEmpty(gameNameText.text) && !string.IsNullOrEmpty(hostNameText.text))
+                {
+                    networkManager.GameName = gameNameText.text;
+                    networkManager.StartHost();
+                }
+            });
 
             networkManager.discovery.onServerFound.AddListener(OnDetectServer);
             networkManager.discovery.StartDiscovery();
         }
 
-        private void OnClickConnect()
-        {
-            networkManager.networkAddress = ipText.text.Trim((char)8203);
-            networkManager.StartClient();
-        }
+        public bool IsJoinPlayerNamed() => !string.IsNullOrEmpty(playerNameText.text);
 
         private void OnDetectServer(DiscoveryResponse _response)
         {
