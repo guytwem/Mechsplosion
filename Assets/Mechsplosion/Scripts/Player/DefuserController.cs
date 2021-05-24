@@ -18,12 +18,16 @@ public class DefuserController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        defuserRigidbody.AddForce(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * moveSpeed * Time.deltaTime, ForceMode.Impulse);
         if (Input.GetKeyDown(KeyCode.Space))
-            Jump();
+            Punch();
     }
 
-    private void Jump()
+    private void FixedUpdate()
+    {
+        defuserRigidbody.MovePosition(defuserRigidbody.position + new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * moveSpeed * Time.deltaTime);
+    }
+
+    private void Punch()
     {
         defuserRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }

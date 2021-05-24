@@ -1,31 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour
 {
-    private void Update()
+    private LevelInteractable currentInteractable;
+
+    // Update is called once per frame
+    void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Mouse is down");
-
-            RaycastHit hitInfo = new RaycastHit();
-            bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
-            if (hit)
+            RaycastHit mouseClick = GetMouseClick();
+            if (mouseClick.point != Vector3.zero)
             {
-                Debug.Log("Hit " + hitInfo.transform.gameObject.name);
-                if (hitInfo.transform.gameObject.tag == "Turret")
-                {
-                    Debug.Log("Hit Turret");
-                    gameObject.transform.Rotate(new Vector3(0, -Input.GetAxis("Mouse X"), 0));
-                }
-                else
-                {
-                    Debug.Log("Nothing Hit");
-                }
+                currentInteractable = mouseClick.collider.transform.gameObject.GetComponent<LevelInteractable>();
             }
         }
+        if (Input.GetMouseButtonUp(0))
+        {
+            if(currentInteractable != null)
+            {
+                currentInteractable.UseInteractable(GetMouseClick().point + Vector3.up);
+            }
+        }
+    }
+
+    private RaycastHit GetMouseClick()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit[] hits = Physics.RaycastAll(ray);
+        foreach(RaycastHit hit in hits)
+        {
+            if (hit.collider.CompareTag("Interactable"))
+                return hit;
+        }
+        return hits.Length > 0 ? hits[0] : default;
     }
 }
