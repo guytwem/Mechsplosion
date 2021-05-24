@@ -326,4 +326,3 @@ Received Import Request.
 Start importing Assets/Mechsplosion/Scenes/GameScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5fd672c2cad232dd397aed2c68cf4eb') in 0.012027 seconds
   Import took 0.015618 seconds .
 
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
