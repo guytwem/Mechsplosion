@@ -29,6 +29,6 @@ public class DefuserController : MonoBehaviour
 
     private void Punch()
     {
-        defuserRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        defuserRigidbody.AddForce(Vector3.forward * jumpForce, ForceMode.Impulse);
     }
 }

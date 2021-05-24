@@ -38,6 +38,9 @@ namespace Mechsplosion.Networking
 
         // The name of the game being sent
         public string gameName;
+        public string hostName;
+        public int playerCount;
+        public int maxPlayers;
     }
 
     [Serializable] public class ServerFoundEvent : UnityEvent<DiscoveryResponse> { }

@@ -14,6 +14,25 @@ namespace Mechsplosion.Networking
         /// </summary>
         public static MechsplosionNetworkManager Instance => singleton as MechsplosionNetworkManager;
 
+        public MechsplosionPlayerNet LocalPlayer
+        {
+            get
+            {
+                foreach (MechsplosionPlayerNet player in players.Values)
+                {
+                    if (player.isLocalPlayer) return player;
+                }
+
+                return null;
+            }
+        }
+
+        public List<MechsplosionPlayerNet> Players => players.Select(p => p.Value).ToList();
+
+
+        public string GameName { get; set; }
+        public string PlayerName { get; set; }
+        public int PlayerCount => players.Count;
         /// <summary>
         /// Whether or not this NetworkManager is the host
         /// </summary>
