@@ -20,12 +20,6 @@ namespace Mechsplosion.Networking
         public string username = "";
         [SyncVar] public bool ready = false;
 
-        [SyncVar]
-        public bool isMech = false;
-
-        [SerializeField]
-        private GameObject defuserPrefab;
-
         [SerializeField] private GameObject[] matchObjects;
 
         public UnityEvent onMatchStarted = new UnityEvent();
@@ -145,16 +139,6 @@ namespace Mechsplosion.Networking
 
         public override void OnStartClient()
         {
-            if (isMech)
-            {
-                gameObject.AddComponent(typeof(LevelController));
-            }
-            else
-            {
-                /*GameObject defuser = */
-                Instantiate(defuserPrefab, transform);
-            }
-
             MechsplosionNetworkManager.Instance.AddPlayer(this);
         }
 

@@ -2,7 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefuserController : MonoBehaviour
+using Mirror;
+using Mirror.Experimental;
+
+[RequireComponent(typeof(NetworkIdentity))]
+public class DefuserController : NetworkBehaviour
 {
     [SerializeField]
     private float moveSpeed = 10.0f;
@@ -10,6 +14,12 @@ public class DefuserController : MonoBehaviour
     private float jumpForce = 10.0f;
     private Rigidbody defuserRigidbody;
     private Vector3 direction;
+
+    [SyncVar]
+    public Vector3 Position;
+    [SyncVar]
+    public Quaternion Rotation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,19 +29,49 @@ public class DefuserController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!isLocalPlayer)
+            return;
+
+        if (hasAuthority && Input.GetKeyDown(KeyCode.Space))
             Punch();
+
+        UpdateValues();
     }
 
     private void FixedUpdate()
+    {
+        if (!isLocalPlayer)
+            return;
+
+        if (hasAuthority)
+            Move();
+    }
+
+    [Command]
+    private void Move()
     {
         direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         direction = Vector3.ClampMagnitude(direction, 1.0f);
         defuserRigidbody.MovePosition(defuserRigidbody.position + direction * moveSpeed * Time.deltaTime);
         if(direction.magnitude > 0.1f)
             defuserRigidbody.MoveRotation(Quaternion.LookRotation(direction, Vector3.up));
+
+        AssignValues();
     }
 
+    private void AssignValues()
+    {
+        Position = transform.position;
+        Rotation = transform.rotation;
+    }
+
+    private void UpdateValues()
+    {
+        transform.position = Position;
+        transform.rotation = Rotation;
+    }
+
+    [Command]
     private void Punch()
     {
         defuserRigidbody.AddForce(direction * jumpForce, ForceMode.Impulse);
