@@ -42,7 +42,8 @@ namespace Mechsplosion.Networking
 
         private Dictionary<byte, MechsplosionPlayerNet> players = new Dictionary<byte, MechsplosionPlayerNet>();
 
-        [SerializeField] private GameObject playerPrefab2;
+        [SerializeField] private GameObject defuserPrefab;
+        [SerializeField] private GameObject mechPrefab;
 
         /// <summary>
         /// Runs only when connecting to an online scene as a host
@@ -76,18 +77,18 @@ namespace Mechsplosion.Networking
             //Replace this line with something that reads a value from the lobby
             bool isMech = false;
 
-            GameObject prefabToUse = isMech ? playerPrefab2 : playerPrefab;
+            //playerPrefab = isMech ? mechPrefab : defuserPrefab;
 
             // Spawn a player and try to use the spawnPos
             GameObject playerObj =
                 spawnPos != null
-                ? Instantiate(prefabToUse, spawnPos.position, spawnPos.rotation)
-                : Instantiate(prefabToUse);
+                ? Instantiate(playerPrefab, spawnPos.position, spawnPos.rotation)
+                : Instantiate(playerPrefab);
 
             // Assign the players ID and add them to the server based on the connection
             AssignPlayerId(playerObj);
             // Associates the player GameObject to the network connection on the server
-            NetworkServer.AddPlayerForConnection(_connection, playerObj);
+            Debug.Log(NetworkServer.AddPlayerForConnection(_connection, playerObj));
         }
 
         /// <summary>

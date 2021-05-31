@@ -3,7 +3,13 @@ guid: 8f2f722ca4a9ada4ab0eadd5c5013e3f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - transport: {instanceID: 0}
+  - authenticator: {instanceID: 0}
+  - playerPrefab: {fileID: 1157278815828006498, guid: 41e1c0752e26c674eb665c36977fb56f, type: 3}
+  - discovery: {instanceID: 0}
+  - defuserPrefab: {fileID: 3389382053845194908, guid: 02e9b76de146e1947b34664682476648, type: 3}
+  - mechPrefab: {fileID: 970284303287180064, guid: 0b4c57080d2454145882366225726270, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

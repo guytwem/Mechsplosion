@@ -3768,7 +3768,8 @@ MonoBehaviour:
   spawnPrefabs:
   - {fileID: 6349928060352435856, guid: bc586fdea9898d344b136a5988f0d3fb, type: 3}
   discovery: {fileID: 0}
-  playerPrefab2: {fileID: 970284303287180064, guid: 0b4c57080d2454145882366225726270, type: 3}
+  defuserPrefab: {fileID: 3389382053845194908, guid: 02e9b76de146e1947b34664682476648, type: 3}
+  mechPrefab: {fileID: 970284303287180064, guid: 0b4c57080d2454145882366225726270, type: 3}
 --- !u!4 &58979989
 Transform:
   m_ObjectHideFlags: 0

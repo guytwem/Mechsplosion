@@ -16,9 +16,9 @@ public class DefuserController : NetworkBehaviour
     private Vector3 direction;
 
     [SyncVar]
-    public Vector3 Position;
+    public Vector3 Position = Vector3.zero;
     [SyncVar]
-    public Quaternion Rotation;
+    public Quaternion Rotation = Quaternion.identity;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,7 @@ public class DefuserController : NetworkBehaviour
     }
 
     // Update is called once per frame
+    [Client]
     void Update()
     {
         if (!isLocalPlayer)
@@ -35,9 +36,9 @@ public class DefuserController : NetworkBehaviour
         if (hasAuthority && Input.GetKeyDown(KeyCode.Space))
             Punch();
 
-        UpdateValues();
     }
 
+    [Client]
     private void FixedUpdate()
     {
         if (!isLocalPlayer)
@@ -63,8 +64,11 @@ public class DefuserController : NetworkBehaviour
     {
         Position = transform.position;
         Rotation = transform.rotation;
+
+        UpdateValues();
     }
 
+    [ClientRpc]
     private void UpdateValues()
     {
         transform.position = Position;
