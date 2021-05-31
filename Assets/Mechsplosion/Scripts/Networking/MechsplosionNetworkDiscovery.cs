@@ -57,7 +57,7 @@ namespace Mechsplosion.Networking
         [Tooltip("Invoked when a server is found")]
         public ServerFoundEvent onServerFound = new ServerFoundEvent();
 
-        private Lobby lobby;
+        
 
         public override void Start()
         {
@@ -71,11 +71,7 @@ namespace Mechsplosion.Networking
             base.Start();
         }
 
-        private void Update()
-        {
-            if (lobby == null)
-                lobby = FindObjectOfType<Lobby>();
-        }
+       
 
         /// <summary>
         /// Process the request from a client
@@ -89,6 +85,8 @@ namespace Mechsplosion.Networking
         /// <returns>A message containing information about this server</returns>
         protected override DiscoveryResponse ProcessRequest(DiscoveryRequest _request, IPEndPoint _endpoint)
         {
+            MechsplosionNetworkManager netManager = MechsplosionNetworkManager.Instance;
+
             try
             {
                 // This is just an example reply message,
@@ -98,7 +96,10 @@ namespace Mechsplosion.Networking
                 {
                     serverId = ServerId,
                     uri = transport.ServerUri(),
-                    gameName = lobby.LobbyName
+                    gameName = netManager.GameName,
+                    hostName = netManager.PlayerName,
+                    maxPlayers = netManager.maxConnections,
+                    playerCount = netManager.PlayerCount
                 };
             }
             catch (NotImplementedException)
