@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace Battlecars.UI
+namespace Mechsplosion.UI
 {
     public class OfflineMenuManager : MonoBehaviour
     {

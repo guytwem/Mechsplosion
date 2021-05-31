@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 using Mirror;
@@ -6,7 +7,7 @@ using Mirror;
 using System.Collections;
 
 using Mechsplosion.UI;
-using Mirror.Experimental;
+
 
 namespace Mechsplosion.Networking
 {
@@ -16,15 +17,21 @@ namespace Mechsplosion.Networking
         public byte playerId;
         [SyncVar]
         public string username = "";
+        [SyncVar] public bool ready = false;
 
-        [SyncVar]
-        public bool isMech = false;
+        
+        [SerializeField] private GameObject[] matchObjects;
 
-        [SerializeField]
-        private GameObject defuserPrefab;
+        public UnityEvent onMatchStarted = new UnityEvent();
 
         private Lobby lobby;
         private bool hasJoinedLobby = false;
+
+        public void StartMatch()
+        {
+            if (isLocalPlayer)
+                CmdStartMatch();
+        }
 
         public void SetUsername(string _name)
         {
@@ -35,7 +42,15 @@ namespace Mechsplosion.Networking
                 CmdSetUsername(_name);
             }
         }
-
+        public void SetReady(bool _ready)
+        {
+            if (isLocalPlayer)
+            {
+                // Only localplayers can call Commands as localplayers are the only
+                // ones who have the authority to talk to the server
+                CmdSetReady(_ready);
+            }
+        }
         public void AssignPlayerToSlot(bool _left, int _slotId, byte _playerId)
         {
             if (isLocalPlayer)
@@ -48,7 +63,11 @@ namespace Mechsplosion.Networking
         [Command]
         public void CmdSetUsername(string _name) => username = _name;
         [Command]
+        public void CmdSetReady(bool _ready) => ready = _ready;
+        [Command]
         public void CmdAssignPlayerToLobbySlot(bool _left, int _slotId, byte _playerId) => RpcAssignPlayerToLobbySlot(_left, _slotId, _playerId);
+        [Command]
+        public void CmdStartMatch() => RpcStartMatch();
         #endregion
         #region RPCs
         [ClientRpc]
@@ -62,6 +81,25 @@ namespace Mechsplosion.Networking
             // Find the Lobby in the scene and set the player to the correct slot
             StartCoroutine(AssignPlayerToLobbySlotDelayed(MechsplosionNetworkManager.Instance.GetPlayerForId(_playerId), _left, _slotId));
         }
+
+        [ClientRpc]
+        public void RpcStartMatch()
+        {
+            foreach (MechsplosionPlayerNet p in MechsplosionNetworkManager.Instance.Players)
+            {
+                foreach (GameObject matchObject in matchObjects)
+                    matchObject.SetActive(true);
+            }
+
+
+
+            LevelManager.LoadLevel("Gameplay");
+
+            MechsplosionPlayerNet player = MechsplosionNetworkManager.Instance.LocalPlayer;
+            FindObjectOfType<Lobby>().OnMatchStarted();
+            
+        }
+
         #endregion
         #region Coroutines
         private IEnumerator AssignPlayerToLobbySlotDelayed(MechsplosionPlayerNet _player, bool _left, int _slotId)
@@ -107,22 +145,14 @@ namespace Mechsplosion.Networking
 
         public override void OnStartClient()
         {
-            // Load the scene with the lobby
-            if (isMech)
-            {
-                gameObject.AddComponent(typeof(LevelController));
-            }
-            else
-            {
-                /*GameObject defuser = */Instantiate(defuserPrefab, transform);
-            }
             MechsplosionNetworkManager.Instance.AddPlayer(this);
         }
 
         // Runs only when the object is connected is the local player
         public override void OnStartLocalPlayer()
         {
-            //SceneManager.LoadSceneAsync("InGameMenus", LoadSceneMode.Additive);
+            // Load the scene with the lobby
+            LevelManager.LoadLevel("MenuScene");
         }
 
         // Runs when the client is disconnected from the server

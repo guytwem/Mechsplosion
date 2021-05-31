@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
 using TMPro;
 
 using Mechsplosion.Networking;
@@ -17,7 +18,7 @@ namespace Mechsplosion.UI
         private TextMeshProUGUI nameDisplay;
         [SerializeField]
         private Button playerButton;
-
+        [SerializeField] private ColorBlock stateColors = ColorBlock.defaultColorBlock;
         private MechsplosionPlayerNet player = null;
 
         // Set the player in this slot to the passed player
@@ -32,6 +33,8 @@ namespace Mechsplosion.UI
             playerButton.interactable = IsTaken;
             // If the player is set, then display their name, otherwise display "Awaiting player..."
             nameDisplay.text = IsTaken ? GetPlayerName() : "Awaiting Player...";
+            playerButton.targetGraphic.color = player == null ? stateColors.disabledColor :
+                    player.ready ? stateColors.pressedColor : stateColors.normalColor;
         }
 
         private string GetPlayerName()
