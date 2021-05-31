@@ -1400,7 +1400,6 @@ MonoBehaviour:
   requiredPlayerCount: 2
   leftTeamHolder: {fileID: 2034207919}
   rightTeamHolder: {fileID: 760706194}
-  lobbyNameInput: {fileID: 0}
   readyUpButton: {fileID: 1318215740}
   startGameButton: {fileID: 109911209}
   uiCam: {fileID: 0}
@@ -1597,6 +1596,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameDisplay: {fileID: 47356431}
   playerButton: {fileID: 1022302915}
+  stateColors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
 --- !u!114 &1022302914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1998,7 +2005,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Players
+  m_text: Defusers
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2130,6 +2137,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameDisplay: {fileID: 1746188223}
   playerButton: {fileID: 1270963137}
+  stateColors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
 --- !u!114 &1270963136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2542,6 +2557,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameDisplay: {fileID: 740403079}
   playerButton: {fileID: 1393152118}
+  stateColors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
 --- !u!114 &1393152117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3416,6 +3439,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameDisplay: {fileID: 1444497130}
   playerButton: {fileID: 2054021941}
+  stateColors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
 --- !u!114 &2054021940
 MonoBehaviour:
   m_ObjectHideFlags: 0
