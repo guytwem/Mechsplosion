@@ -3,6 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 using Mirror;
+using Mirror.Experimental;
 
 using System.Collections;
 
@@ -19,7 +20,12 @@ namespace Mechsplosion.Networking
         public string username = "";
         [SyncVar] public bool ready = false;
 
-        
+        [SyncVar]
+        public bool isMech = false;
+
+        [SerializeField]
+        private GameObject defuserPrefab;
+
         [SerializeField] private GameObject[] matchObjects;
 
         public UnityEvent onMatchStarted = new UnityEvent();
@@ -93,7 +99,7 @@ namespace Mechsplosion.Networking
 
 
 
-            LevelManager.LoadLevel("Gameplay");
+            LevelManager.LoadLevel("GameScene");
 
             MechsplosionPlayerNet player = MechsplosionNetworkManager.Instance.LocalPlayer;
             FindObjectOfType<Lobby>().OnMatchStarted();
@@ -118,12 +124,6 @@ namespace Mechsplosion.Networking
         }
         #endregion
 
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
         // Update is called once per frame
         void Update()
         {
@@ -145,15 +145,27 @@ namespace Mechsplosion.Networking
 
         public override void OnStartClient()
         {
+            if (isMech)
+            {
+                gameObject.AddComponent(typeof(LevelController));
+            }
+            else
+            {
+                /*GameObject defuser = */
+                Instantiate(defuserPrefab, transform);
+            }
+
             MechsplosionNetworkManager.Instance.AddPlayer(this);
         }
 
         // Runs only when the object is connected is the local player
+        /*
         public override void OnStartLocalPlayer()
         {
             // Load the scene with the lobby
             LevelManager.LoadLevel("MenuScene");
         }
+        */
 
         // Runs when the client is disconnected from the server
         public override void OnStopClient()
