@@ -2,55 +2,58 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bomb : MonoBehaviour
+namespace Mechsplosion.MatchSettings
 {
-    [SerializeField] private float fuse = 5.0f;
-    [SerializeField] private float strength = 10.0f;
-    [SerializeField] private float radius = 2.0f;
-    [SerializeField] private float upwardsModifier = 2.0f;
-
-    private List<Rigidbody> targets;
-
-    private void Awake()
+    public class Bomb : MonoBehaviour
     {
-        targets = new List<Rigidbody>();
-    }
+        [SerializeField] private float fuse = 5.0f;
+        [SerializeField] public float strength = 10.0f;
+        [SerializeField] public float radius = 2.0f;
+        [SerializeField] private float upwardsModifier = 2.0f;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        StartCoroutine(nameof(CountDown));
-    }
+        private List<Rigidbody> targets;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Rigidbody target = other.GetComponent<Rigidbody>();
-        if(target != null)
+        private void Awake()
         {
-            targets.Add(target);
+            targets = new List<Rigidbody>();
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        Rigidbody target = other.GetComponent<Rigidbody>();
-        if (target != null)
+        private void OnCollisionEnter(Collision collision)
         {
-            targets.Remove(target);
+            StartCoroutine(nameof(CountDown));
         }
-    }
 
-    private IEnumerator CountDown()
-    {
-        yield return new WaitForSeconds(fuse);
-        Destroy(gameObject);
-    }
-
-    private void OnDestroy()
-    {
-        foreach(Rigidbody target in targets)
+        private void OnTriggerEnter(Collider other)
         {
-            if(target != null)
-                target.AddExplosionForce(strength, transform.position, radius, upwardsModifier, ForceMode.VelocityChange);
+            Rigidbody target = other.GetComponent<Rigidbody>();
+            if (target != null)
+            {
+                targets.Add(target);
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            Rigidbody target = other.GetComponent<Rigidbody>();
+            if (target != null)
+            {
+                targets.Remove(target);
+            }
+        }
+
+        private IEnumerator CountDown()
+        {
+            yield return new WaitForSeconds(fuse);
+            Destroy(gameObject);
+        }
+
+        private void OnDestroy()
+        {
+            foreach (Rigidbody target in targets)
+            {
+                if (target != null)
+                    target.AddExplosionForce(strength, transform.position, radius, upwardsModifier, ForceMode.VelocityChange);
+            }
         }
     }
 }
