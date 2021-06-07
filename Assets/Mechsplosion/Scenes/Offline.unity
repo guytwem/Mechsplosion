@@ -4115,7 +4115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1400527322
 Transform:
   m_ObjectHideFlags: 0
@@ -4179,13 +4179,13 @@ MonoBehaviour:
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 0}
+  playerPrefab: {fileID: 1157278815828006498, guid: 41e1c0752e26c674eb665c36977fb56f, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 1
   spawnPrefabs: []
   discovery: {fileID: 1400527325}
-  playerPrefab1: {fileID: 0}
-  playerPrefab2: {fileID: 0}
+  defuserPrefab: {fileID: 3389382053845194908, guid: 02e9b76de146e1947b34664682476648, type: 3}
+  mechPrefab: {fileID: 970284303287180064, guid: 0b4c57080d2454145882366225726270, type: 3}
 --- !u!114 &1400527325
 MonoBehaviour:
   m_ObjectHideFlags: 0
