@@ -75,7 +75,7 @@ namespace Mechsplosion.Networking
             Transform spawnPos = GetStartPosition();
 
             //Replace this line with something that reads a value from the lobby
-            bool isMech = false;
+            //bool isMech = false;
 
             //playerPrefab = isMech ? mechPrefab : defuserPrefab;
 
