@@ -30,10 +30,11 @@ public class DefuserController : NetworkBehaviour
     [Client]
     void Update()
     {
+
         if (!isLocalPlayer)
             return;
 
-        if (hasAuthority && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
             Punch();
 
     }
@@ -41,14 +42,13 @@ public class DefuserController : NetworkBehaviour
     [Client]
     private void FixedUpdate()
     {
+
         if (!isLocalPlayer)
             return;
 
-        if (hasAuthority)
-            Move();
+        Move();
     }
 
-    [Command]
     private void Move()
     {
         direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -57,14 +57,14 @@ public class DefuserController : NetworkBehaviour
         if(direction.magnitude > 0.1f)
             defuserRigidbody.MoveRotation(Quaternion.LookRotation(direction, Vector3.up));
 
-        AssignValues();
+        //AssignValues();
     }
 
+    /*
     private void AssignValues()
     {
         Position = transform.position;
         Rotation = transform.rotation;
-
         UpdateValues();
     }
 
@@ -75,7 +75,7 @@ public class DefuserController : NetworkBehaviour
         transform.rotation = Rotation;
     }
 
-    [Command]
+    */
     private void Punch()
     {
         defuserRigidbody.AddForce(direction * jumpForce, ForceMode.Impulse);

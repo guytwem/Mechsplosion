@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -3399670904488132843}
   - component: {fileID: 920476483553602527}
   - component: {fileID: -50577248058882161}
+  - component: {fileID: 1973913041237531702}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -86,11 +87,28 @@ MonoBehaviour:
   playerId: 0
   username: 
   ready: 0
-  defuserPrefab: {fileID: 0}
   matchObjects: []
   onMatchStarted:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1973913041237531702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3389382053845194908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f032128052c95a46afb0ddd97d994cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  target: {fileID: 2735453615934798172}
+  lerpVelocityAmount: 0.5
+  lerpPositionAmount: 0.5
+  clientAuthority: 1
 --- !u!1 &4469427717132575815
 GameObject:
   m_ObjectHideFlags: 0
