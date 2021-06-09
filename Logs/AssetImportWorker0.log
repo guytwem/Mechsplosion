@@ -335,3 +335,4 @@ Received Import Request.
 Start importing Assets/Mechsplosion/Scripts/Networking/MechsplosionNetworkManager.cs using Guid(8f2f722ca4a9ada4ab0eadd5c5013e3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09f979a50db026f794358bceba90bfb5') in 0.008403 seconds
   Import took 0.012101 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
