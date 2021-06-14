@@ -42,9 +42,6 @@ namespace Mechsplosion.Networking
 
         private Dictionary<byte, MechsplosionPlayerNet> players = new Dictionary<byte, MechsplosionPlayerNet>();
 
-        [SerializeField] private GameObject defuserPrefab;
-        [SerializeField] private GameObject mechPrefab;
-
         /// <summary>
         /// Runs only when connecting to an online scene as a host
         /// </summary>
@@ -73,11 +70,6 @@ namespace Mechsplosion.Networking
         {
             // Give us the next spawn position depending on the spawnMode
             Transform spawnPos = GetStartPosition();
-
-            //Replace this line with something that reads a value from the lobby
-            //bool isMech = false;
-
-            //playerPrefab = isMech ? mechPrefab : defuserPrefab;
 
             // Spawn a player and try to use the spawnPos
             GameObject playerObj =
