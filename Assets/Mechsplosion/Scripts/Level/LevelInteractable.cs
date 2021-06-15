@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelInteractable : MonoBehaviour
+using Mirror;
+
+public class LevelInteractable : NetworkBehaviour
 {
     protected float moveSpeed = 1.0f;
 

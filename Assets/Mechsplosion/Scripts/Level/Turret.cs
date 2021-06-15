@@ -1,3 +1,4 @@
+using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,7 +30,20 @@ public class Turret : LevelInteractable
 
     private void Shoot()
     {
+        CommandShoot();
+    }
+
+    [Command(requiresAuthority =false)]
+    private void CommandShoot()
+    {
+        RPCShoot();
+    }
+
+    [ClientRpc]
+    private void RPCShoot()
+    {
         GameObject bullet = Instantiate(projectile, transform.TransformPoint(projectileOffset), transform.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(transform.TransformDirection(Vector3.forward) * projectileForce, ForceMode.VelocityChange);
     }
+
 }

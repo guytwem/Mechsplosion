@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class LevelController : MonoBehaviour
+public class LevelController : NetworkBehaviour
 {
     private LevelInteractable currentInteractable;
 
     // Update is called once per frame
     void Update()
     {
+        if (!hasAuthority)
+            return;
+
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit mouseClick = GetMouseClick();

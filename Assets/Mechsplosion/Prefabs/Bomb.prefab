@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7434d079edd115429387e2cc4bca1c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuse: 0.5
+  fuse: 1
   strength: 10
   radius: 2
   upwardsModifier: 2

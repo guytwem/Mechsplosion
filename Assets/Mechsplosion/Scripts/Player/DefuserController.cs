@@ -31,7 +31,7 @@ public class DefuserController : NetworkBehaviour
     void Update()
     {
 
-        if (!isLocalPlayer)
+        if (!hasAuthority)
             return;
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -43,7 +43,7 @@ public class DefuserController : NetworkBehaviour
     private void FixedUpdate()
     {
 
-        if (!isLocalPlayer)
+        if (!hasAuthority)
             return;
 
         Move();
