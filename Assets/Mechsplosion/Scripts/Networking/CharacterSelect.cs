@@ -14,7 +14,7 @@ public class CharacterSelect : NetworkBehaviour
     [Command(requiresAuthority = false)]
     public void CmdSelect(NetworkConnectionToClient sender = null)
     {
-        GameObject characterInstance = Instantiate(MechsplosionNetworkManager.Instance.IsHost ? characterList[0] : characterList[1], transform.position, Quaternion.identity);
+        GameObject characterInstance = Instantiate(LevelController.Instance == null ? characterList[0] : characterList[1], transform.position, Quaternion.identity); ; ;
         
         NetworkServer.Spawn(characterInstance, sender);
         characterInstance.GetComponent<NetworkIdentity>().AssignClientAuthority(sender);
