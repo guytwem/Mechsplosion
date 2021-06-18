@@ -44,6 +44,10 @@ namespace Mechsplosion.MatchSettings
             {
                 timeText.gameObject.SetActive(false);
             }
+            else
+            {
+                timeText.gameObject.SetActive(true);
+            }
             livesText.text = "Lives: " + lives.ToString();
             if(lives == 0)
             {

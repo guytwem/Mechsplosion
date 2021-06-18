@@ -4184,8 +4184,6 @@ MonoBehaviour:
   playerSpawnMethod: 1
   spawnPrefabs: []
   discovery: {fileID: 1400527325}
-  playerPrefab1: {fileID: 0}
-  playerPrefab2: {fileID: 0}
 --- !u!114 &1400527325
 MonoBehaviour:
   m_ObjectHideFlags: 0

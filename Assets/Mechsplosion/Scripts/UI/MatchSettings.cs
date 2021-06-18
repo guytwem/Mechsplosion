@@ -8,30 +8,38 @@ namespace Mechsplosion.MatchSettings
 {
     public class MatchSettings : MonoBehaviour
     {
+        [SerializeField]
         private GameTime gameTime;
+        [SerializeField]
         private Bomb bomb;
-        private Core core;
+        [SerializeField]
+        private Shield core;
+        [SerializeField]
+        private Shield core2;
 
 
         public void FavourDefusers()
         {
             bomb.strength = 10;
             bomb.radius = 3;
-            core.coreHealth = 75;
+            core.health = 75;
+            core2.health = 75;
         }
 
         public void FavourMech()
         {
             bomb.strength = 15;
             bomb.radius = 5;
-            core.coreHealth = 100;
+            core.health = 100;
+            core2.health = 100;
         }
 
         public void Normal()
         {
             bomb.strength = 10;
             bomb.radius = 3;
-            core.coreHealth = 100;
+            core.health = 100;
+            core2.health = 100;
         }
 
         public void NoTimeLimit()

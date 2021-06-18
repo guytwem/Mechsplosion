@@ -4,6 +4,9 @@ using UnityEngine;
 
 using Mirror;
 
+/// <summary>
+/// An object that a MechController can interact with
+/// </summary>
 public class LevelInteractable : NetworkBehaviour
 {
     protected float moveSpeed = 1.0f;
