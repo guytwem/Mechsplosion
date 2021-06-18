@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+using Mirror;
+
 namespace Mechsplosion.MatchSettings
 {
-    public class GameTime : MonoBehaviour
+    public class GameTime : NetworkBehaviour
     {
         public float fiveMinuteTimer = 300;
         public float twoMinuteTimer = 120;
@@ -16,7 +18,7 @@ namespace Mechsplosion.MatchSettings
         public TMP_Text livesText;
         public GameObject levelOne;
         public GameObject levelTwo;
-        public int lives;
+        [SyncVar] public int lives;
         public GameObject pauseMenu;
 
 

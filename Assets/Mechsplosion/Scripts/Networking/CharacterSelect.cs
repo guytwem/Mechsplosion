@@ -2,6 +2,9 @@ using UnityEngine;
 using Mirror;
 using Mechsplosion.Networking;
 
+/// <summary>
+/// This script makes it so that the host plays as the mech, and the clients play as defusers
+/// </summary>
 public class CharacterSelect : NetworkBehaviour
 {
     [SerializeField] private GameObject[] characterList = default;

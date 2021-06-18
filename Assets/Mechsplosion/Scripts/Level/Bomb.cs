@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Mechsplosion.MatchSettings
 {
+    /// <summary>
+    /// This is the projectile that the turrets shoot
+    /// </summary>
     public class Bomb : MonoBehaviour
     {
         [SerializeField] private float fuse = 5.0f;
@@ -18,6 +21,11 @@ namespace Mechsplosion.MatchSettings
             targets = new List<Rigidbody>();
         }
 
+        /// <summary>
+        /// When it hits something, its countdown starts
+        /// When the countdown finishes, the bomb explodes
+        /// </summary>
+        /// <param name="collision"></param>
         private void OnCollisionEnter(Collision collision)
         {
             StartCoroutine(nameof(CountDown));
@@ -47,6 +55,9 @@ namespace Mechsplosion.MatchSettings
             Destroy(gameObject);
         }
 
+        /// <summary>
+        /// When the object is destroyed, it adds an explosive force to every object inside its radius
+        /// </summary>
         private void OnDestroy()
         {
             foreach (Rigidbody target in targets)

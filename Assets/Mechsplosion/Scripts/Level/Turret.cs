@@ -3,10 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// The only interactable currently available
+/// The turret shoots a projectile in the direction the mech controller drags the mouse
+/// </summary>
 public class Turret : LevelInteractable
 {
     [SerializeField] private float turnDuration = 1.0f;
     [SerializeField] private GameObject projectile;
+    /// <summary>
+    /// The position the projectile is instantiated from
+    /// </summary>
     [SerializeField] private Vector3 projectileOffset;
     [SerializeField] private float projectileForce = 10.0f;
 

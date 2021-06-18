@@ -3,8 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
+/// <summary>
+/// This script is used by the player playing as the 'mech' 
+/// </summary>
 public class LevelController : NetworkBehaviour
 {
+    /// <summary>
+    /// The object being interacted with
+    /// </summary>
     private LevelInteractable currentInteractable;
 
     public static LevelController Instance = null;
@@ -44,6 +50,9 @@ public class LevelController : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Fires a raycast from the mouse, and returns the first object hit
+    /// </summary>
     private RaycastHit GetMouseClick()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

@@ -6,11 +6,17 @@ using Mirror;
 using Mirror.Experimental;
 using Mechsplosion.MatchSettings;
 
+/// <summary>
+/// This script is used by players playing as 'defusers'
+/// </summary>
 [RequireComponent(typeof(NetworkIdentity))]
 public class DefuserController : NetworkBehaviour
 {
     [SerializeField]
     private float moveSpeed = 10.0f;
+    /// <summary>
+    /// Slightly misleading name - this is the strength of their forwards push
+    /// </summary>
     [SerializeField]
     private float jumpForce = 10.0f;
     private Rigidbody defuserRigidbody;
@@ -51,6 +57,9 @@ public class DefuserController : NetworkBehaviour
         Move();
     }
 
+    /// <summary>
+    /// Moves the defuser in the direction of the wasd or arrow keys
+    /// </summary>
     private void Move()
     {
         direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -78,6 +87,9 @@ public class DefuserController : NetworkBehaviour
     }
 
     */
+    /// <summary>
+    /// Pushes the defuser forwards - this is how they damage the energy shield
+    /// </summary>
     private void Punch()
     {
         defuserRigidbody.AddForce(direction * jumpForce, ForceMode.Impulse);
@@ -86,8 +98,16 @@ public class DefuserController : NetworkBehaviour
     private void Death()
     {
         gameObject.transform.position = new Vector3(10, 4, 0);
-        settings.lives--;
+        CmdLives();
     }
+
+    [Command]
+    private void CmdLives()
+    {
+        settings.lives--;
+
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Bomb")
