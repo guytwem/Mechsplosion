@@ -2,7 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelInteractable : MonoBehaviour
+using Mirror;
+
+/// <summary>
+/// An object that a MechController can interact with
+/// </summary>
+public class LevelInteractable : NetworkBehaviour
 {
     protected float moveSpeed = 1.0f;
 
@@ -16,6 +21,10 @@ public class LevelInteractable : MonoBehaviour
         StartCoroutine(nameof(Interaction), _location);
     }
 
+    /// <summary>
+    /// Default action for an interactable - it moves towards the specified location
+    /// </summary>
+    /// <param name="_location">The location it moves to</param>
     protected virtual IEnumerator Interaction(Vector3 _location)
     {
         float lerpVal = 0;

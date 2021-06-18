@@ -80,7 +80,7 @@ namespace Mechsplosion.Networking
             // Assign the players ID and add them to the server based on the connection
             AssignPlayerId(playerObj);
             // Associates the player GameObject to the network connection on the server
-            NetworkServer.AddPlayerForConnection(_connection, playerObj);
+            Debug.Log(NetworkServer.AddPlayerForConnection(_connection, playerObj));
         }
 
         /// <summary>

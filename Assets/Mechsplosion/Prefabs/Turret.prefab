@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4758766966139264922}
   - component: {fileID: 2643631006764192354}
   - component: {fileID: -365831953012359743}
+  - component: {fileID: 3684868353076809357}
+  - component: {fileID: 3034836475720314651}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Interactable
@@ -63,6 +65,41 @@ MonoBehaviour:
   projectile: {fileID: 6349928060352435856, guid: bc586fdea9898d344b136a5988f0d3fb, type: 3}
   projectileOffset: {x: 0, y: 1, z: 2}
   projectileForce: 10
+--- !u!114 &3684868353076809357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315826345192961150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 
+  hasSpawned: 0
+--- !u!114 &3034836475720314651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315826345192961150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  clientAuthority: 0
+  localPositionSensitivity: 0.01
+  localRotationSensitivity: 0.01
+  localScaleSensitivity: 0.01
 --- !u!1 &3295838712972654165
 GameObject:
   m_ObjectHideFlags: 0
