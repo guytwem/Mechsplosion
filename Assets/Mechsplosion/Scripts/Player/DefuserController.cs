@@ -4,6 +4,7 @@ using UnityEngine;
 
 using Mirror;
 using Mirror.Experimental;
+using Mechsplosion.MatchSettings;
 
 [RequireComponent(typeof(NetworkIdentity))]
 public class DefuserController : NetworkBehaviour
@@ -14,6 +15,7 @@ public class DefuserController : NetworkBehaviour
     private float jumpForce = 10.0f;
     private Rigidbody defuserRigidbody;
     private Vector3 direction;
+    private GameTime settings;
 
     [SyncVar]
     public Vector3 Position = Vector3.zero;
@@ -79,5 +81,18 @@ public class DefuserController : NetworkBehaviour
     private void Punch()
     {
         defuserRigidbody.AddForce(direction * jumpForce, ForceMode.Impulse);
+    }
+
+    private void Death()
+    {
+        gameObject.transform.position = new Vector3(10, 4, 0);
+        settings.lives--;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Bomb")
+        {
+            Death();
+        }
     }
 }
