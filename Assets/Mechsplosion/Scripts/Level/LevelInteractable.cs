@@ -21,6 +21,10 @@ public class LevelInteractable : NetworkBehaviour
         StartCoroutine(nameof(Interaction), _location);
     }
 
+    /// <summary>
+    /// Default action for an interactable - it moves towards the specified location
+    /// </summary>
+    /// <param name="_location">The location it moves to</param>
     protected virtual IEnumerator Interaction(Vector3 _location)
     {
         float lerpVal = 0;
